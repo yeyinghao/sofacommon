@@ -50,22 +50,22 @@
             <dependency>
                 <groupId>com.luman</groupId>
                 <artifactId>sofa-common-dal</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.luman</groupId>
                 <artifactId>sofa-common-dto</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.luman</groupId>
                 <artifactId>sofa-common-monitor</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.luman</groupId>
                 <artifactId>sofa-common-util</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
             <!--Project modules End-->
 
