@@ -8,6 +8,7 @@ import com.luman.sofa.common.dal.model.DP;
 import com.luman.sofa.common.dal.service.CoreService;
 import com.luman.sofa.common.dto.PageModel;
 import com.luman.sofa.common.dto.Paging;
+import com.luman.sofa.common.monitor.dal.DalLog;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +20,7 @@ import java.util.Optional;
  * @date 2024/04/19
  */
 @SuppressWarnings("unused")
+@DalLog
 public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends BaseMapper<P>> extends ServiceImpl<M, P> implements CoreService<D>, DataConvert<P, D> {
 
 	@Override
