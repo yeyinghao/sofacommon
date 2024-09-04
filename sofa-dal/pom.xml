@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.luman</groupId>
+        <groupId>com.luman.common</groupId>
         <artifactId>sofacommon</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -17,12 +17,12 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.luman</groupId>
+            <groupId>com.luman.common</groupId>
             <artifactId>sofa-common</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.luman</groupId>
+            <groupId>com.luman.common</groupId>
             <artifactId>sofa-monitor</artifactId>
         </dependency>
 
