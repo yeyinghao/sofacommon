@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.luman</groupId>
-    <artifactId>sofa-common</artifactId>
+    <artifactId>sofacommon</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>sofa-common</name>
+    <name>sofacommon</name>
 
     <properties>
         <!--<skipTests>true</skipTests>-->
@@ -19,6 +19,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <sofa.boot.version>4.3.0</sofa.boot.version>
+        <sofacommon.version>1.0.0-SNAPSHOT</sofacommon.version>
 
         <nacos.version>0.3.0-RC</nacos.version>
         <mybatis-encrypt-version>1.2.0</mybatis-encrypt-version>
@@ -38,10 +39,9 @@
     </properties>
 
     <modules>
-        <module>sofa-common-monitor</module>
-        <module>sofa-common-dto</module>
-        <module>sofa-common-dal</module>
-        <module>sofa-common-util</module>
+        <module>sofa-monitor</module>
+        <module>sofa-dal</module>
+        <module>sofa-common</module>
     </modules>
 
     <dependencyManagement>
@@ -49,23 +49,18 @@
             <!--Project modules-->
             <dependency>
                 <groupId>com.luman</groupId>
-                <artifactId>sofa-common-dal</artifactId>
-                <version>${project.version}</version>
+                <artifactId>sofa-dal</artifactId>
+                <version>${sofacommon.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.luman</groupId>
-                <artifactId>sofa-common-dto</artifactId>
-                <version>${project.version}</version>
+                <artifactId>sofa-monitor</artifactId>
+                <version>${sofacommon.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.luman</groupId>
-                <artifactId>sofa-common-monitor</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.luman</groupId>
-                <artifactId>sofa-common-util</artifactId>
-                <version>${project.version}</version>
+                <artifactId>sofa-common</artifactId>
+                <version>${sofacommon.version}</version>
             </dependency>
             <!--Project modules End-->
 
@@ -107,6 +102,24 @@
                 <version>${hutool.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-json</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-extra</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
             <!-- mysql数据库 -->
             <dependency>
                 <groupId>com.mysql</groupId>
@@ -119,6 +132,12 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
