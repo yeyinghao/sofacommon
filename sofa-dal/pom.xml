@@ -12,7 +12,7 @@
 
     <artifactId>sofa-dal</artifactId>
     <packaging>jar</packaging>
-    <name>sofa-common-dal</name>
+    <name>sofa-dal</name>
 
     <dependencies>
 
