@@ -31,21 +31,19 @@ public interface DataConvert<P extends DO, D extends DP> {
 	 */
 	D convertToDP(P p);
 
-	default D build(D d, P p) {
+	default D buildDP(D d, P p) {
 		d.setId(p.getId());
 		d.setCreateTime(p.getCreateTime());
 		d.setUpdateTime(p.getUpdateTime());
 		d.setStatus(p.getStatus());
-		d.setExtInfo(p.getExtInfo());
 		return d;
 	}
 
-	default P build(P p, D d) {
+	default P buildDO(P p, D d) {
 		p.setId(d.getId());
 		p.setCreateTime(d.getCreateTime());
 		p.setUpdateTime(d.getUpdateTime());
 		p.setStatus(d.getStatus());
-		p.setExtInfo(d.getExtInfo());
 		return p;
 	}
 
