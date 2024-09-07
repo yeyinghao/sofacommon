@@ -3,7 +3,6 @@ package com.luman.sofa.common.exception;
 
 import cn.hutool.core.util.StrUtil;
 import com.luman.sofa.common.enums.ByErrorCode;
-import com.luman.sofa.common.enums.ErrorEnum;
 
 /**
  * 业务exceptionfactory
@@ -80,9 +79,5 @@ public class BizExceptionFactory {
 	 */
 	public static BizException build(ByErrorCode errorEnum, Throwable throwable, String template, Object... errorMessages) {
 		return new BizException(errorEnum, StrUtil.format(template, errorMessages), throwable);
-	}
-
-	public static <T> BizException build(T data) {
-		return new BizException(ErrorEnum.ILLEGAL_ENUM, StrUtil.format(ErrorEnum.ILLEGAL_ENUM.getCode(), data));
 	}
 }
