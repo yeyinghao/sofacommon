@@ -6,7 +6,6 @@
 package com.luman.sofa.common.utils;
 
 import cn.hutool.core.util.StrUtil;
-import com.luman.sofa.common.exception.BizException;
 import lombok.experimental.UtilityClass;
 import org.slf4j.Logger;
 
@@ -192,15 +191,5 @@ public class LoggerUtil {
 	 */
 	public static void error(Logger logger, String template, Object... messages) {
 		logger.error(StrUtil.format(template, messages));
-	}
-
-	/**
-	 * 信息
-	 *
-	 * @param logger 日志记录器
-	 * @param e      e
-	 */
-	public static void info(Logger logger, BizException e) {
-		logger.info(e.toString());
 	}
 }
