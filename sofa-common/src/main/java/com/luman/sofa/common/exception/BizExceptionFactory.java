@@ -3,6 +3,7 @@ package com.luman.sofa.common.exception;
 
 import cn.hutool.core.util.StrUtil;
 import com.luman.sofa.common.enums.ByErrorCode;
+import com.luman.sofa.common.enums.ErrorEnum;
 
 /**
  * 业务exceptionfactory
@@ -18,7 +19,7 @@ public class BizExceptionFactory {
 	 * @param errorEnum 错误枚举
 	 * @return {@link BizException }
 	 */
-	public static BizException buildBizException(ByErrorCode errorEnum) {
+	public static BizException build(ByErrorCode errorEnum) {
 		return new BizException(errorEnum);
 	}
 
@@ -29,7 +30,7 @@ public class BizExceptionFactory {
 	 * @param errorMessage 错误消息
 	 * @return {@link BizException }
 	 */
-	public static BizException buildBizException(ByErrorCode errorEnum, String errorMessage) {
+	public static BizException build(ByErrorCode errorEnum, String errorMessage) {
 		return new BizException(errorEnum, errorMessage);
 	}
 
@@ -41,7 +42,7 @@ public class BizExceptionFactory {
 	 * @param errorMessages
 	 * @return {@link BizException }
 	 */
-	public static BizException buildBizException(ByErrorCode errorEnum, String template, Object... errorMessages) {
+	public static BizException build(ByErrorCode errorEnum, String template, Object... errorMessages) {
 		return new BizException(errorEnum, StrUtil.format(template, errorMessages));
 	}
 
@@ -52,7 +53,7 @@ public class BizExceptionFactory {
 	 * @param throwable throwable
 	 * @return {@link BizException }
 	 */
-	public static BizException buildBizException(ByErrorCode errorEnum, Throwable throwable) {
+	public static BizException build(ByErrorCode errorEnum, Throwable throwable) {
 		return new BizException(errorEnum, throwable);
 	}
 
@@ -64,7 +65,7 @@ public class BizExceptionFactory {
 	 * @param errorMessage 错误消息
 	 * @return {@link BizException }
 	 */
-	public static BizException buildBizException(ByErrorCode errorEnum, Throwable throwable, String errorMessage) {
+	public static BizException build(ByErrorCode errorEnum, Throwable throwable, String errorMessage) {
 		return new BizException(errorEnum, errorMessage, throwable);
 	}
 
@@ -77,8 +78,11 @@ public class BizExceptionFactory {
 	 * @param errorMessages
 	 * @return {@link BizException }
 	 */
-	public static BizException buildBizException(ByErrorCode errorEnum, Throwable throwable, String template, Object... errorMessages) {
+	public static BizException build(ByErrorCode errorEnum, Throwable throwable, String template, Object... errorMessages) {
 		return new BizException(errorEnum, StrUtil.format(template, errorMessages), throwable);
 	}
 
+	public static <T> BizException build(T data) {
+		return new BizException(ErrorEnum.ILLEGAL_ENUM, StrUtil.format(ErrorEnum.ILLEGAL_ENUM.getCode(), data));
+	}
 }

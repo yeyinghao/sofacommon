@@ -27,6 +27,11 @@ public enum ErrorEnum implements ByErrorCode {
 	ILLEGAL_PARAMETER("ILLEGAL_PARAMETER", HttpConstant.BAD_REQUEST, "参数非法"),
 
 	/**
+	 * 枚举解析失败
+	 */
+	ILLEGAL_ENUM("ILLEGAL_ENUM", HttpConstant.BAD_REQUEST, "枚举解析失败: {}"),
+
+	/**
 	 * 业务异常
 	 */
 	BIZ_ERROR("BIZ_ERROR", HttpConstant.BAD_REQUEST, "业务异常"),
