@@ -1,13 +1,9 @@
 package com.luman.sofa.common.utils;
 
-import cn.hutool.core.collection.CollUtil;
-import com.google.common.collect.Lists;
 import com.luman.sofa.common.dto.EnumVO;
 import com.luman.sofa.common.enums.ByCode;
-import com.luman.sofa.common.exception.BizException;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -40,45 +36,18 @@ public class EnumUtil {
 		return Optional.empty();
 	}
 
-	public static <M extends ByCode<T>, T, EX extends BizException> List<M> getEnumsByCodes(Class<M> type, List<T> codes) {
-		if (!type.isEnum()) {
-			return Lists.newArrayList();
-		}
-		return codes.stream().map(item -> EnumUtil.getEnumByCode(type, item).orElse(null)).filter(Objects::nonNull).toList();
-	}
-
 	/**
 	 * 获取名称
 	 *
 	 * @param byCode 基础枚举
 	 * @return {@link T }
 	 */
-	public static <M extends ByCode<T>, T> T getName(M byCode) {
-		return Optional.ofNullable(byCode).map(ByCode::getCode).orElse(null);
+	public static <M extends ByCode<T>, T> Optional<T> getName(M byCode) {
+		return Optional.ofNullable(byCode).map(ByCode::getCode);
 	}
 
-	/**
-	 * 获取名称
-	 *
-	 * @param byCodes 基础枚举
-	 * @return {@link T }
-	 */
-	public static <M extends ByCode<T>, T> List<T> getNames(List<M> byCodes) {
-		if (CollUtil.isEmpty(byCodes)) {
-			return Lists.newArrayList();
-		}
-		return byCodes.stream().map(EnumUtil::getName).toList();
-	}
-
-	public static <M extends ByCode<T>, T> EnumVO toEnumVO(M byCode) {
-		return Optional.ofNullable(byCode).map(EnumVO::new).orElse(null);
-	}
-
-	public static <M extends ByCode<T>, T> List<EnumVO> toEnumVOs(List<M> byCodes) {
-		if (CollUtil.isEmpty(byCodes)) {
-			return Lists.newArrayList();
-		}
-		return byCodes.stream().map(EnumVO::new).toList();
+	public static <M extends ByCode<T>, T> Optional<EnumVO> toEnumVO(M byCode) {
+		return Optional.ofNullable(byCode).map(EnumVO::new);
 	}
 
 }
