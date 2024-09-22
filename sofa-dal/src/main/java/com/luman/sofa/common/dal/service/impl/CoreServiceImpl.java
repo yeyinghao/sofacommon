@@ -1,13 +1,12 @@
 package com.luman.sofa.common.dal.service.impl;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luman.sofa.common.dal.convert.DataConvert;
 import com.luman.sofa.common.dal.model.DO;
 import com.luman.sofa.common.dal.model.DP;
 import com.luman.sofa.common.dal.service.CoreService;
-import com.luman.sofa.common.dto.PageModel;
-import com.luman.sofa.common.dto.Paging;
 import com.luman.sofa.common.monitor.dal.DalLog;
 
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.Optional;
  */
 @SuppressWarnings("unused")
 @DalLog
-public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends BaseMapper<P>> extends ServiceImpl<M, P> implements CoreService<D>, DataConvert<P, D> {
+public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends BaseMapper<P>> extends ServiceImpl<M, P> implements CoreService<D, P>, DataConvert<P, D> {
 
 	@Override
 	public Long save(D entity) {
@@ -75,7 +74,7 @@ public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends Base
 	}
 
 	@Override
-	public PageModel<D> listByPage(Paging paging) {
-		return page2PageModel(lambdaQuery().page(paging2Page(paging)).convert(this::convertToDP));
+	public IPage<D> listByPage(IPage<P> paging) {
+		return lambdaQuery().page(paging).convert(this::convertToDP);
 	}
 }

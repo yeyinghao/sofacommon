@@ -2,6 +2,7 @@ package com.luman.sofa.common.utils;
 
 import com.luman.sofa.common.dto.EnumVO;
 import com.luman.sofa.common.enums.ByCode;
+import com.luman.sofa.common.enums.ByStringCode;
 import lombok.experimental.UtilityClass;
 
 import java.util.Objects;
@@ -38,16 +39,13 @@ public class EnumUtil {
 
 	/**
 	 * 获取名称
-	 *
-	 * @param byCode 基础枚举
-	 * @return {@link T }
 	 */
-	public static <M extends ByCode<T>, T> Optional<T> getName(M byCode) {
-		return Optional.ofNullable(byCode).map(ByCode::getCode);
+	public static <M extends ByStringCode> String getName(M byCode) {
+		return Optional.ofNullable(byCode).map(ByStringCode::getCode).orElse(null);
 	}
 
-	public static <M extends ByCode<T>, T> Optional<EnumVO> toEnumVO(M byCode) {
-		return Optional.ofNullable(byCode).map(EnumVO::new);
+	public static <M extends ByStringCode> EnumVO enum2VO(M byCode) {
+		return Optional.ofNullable(byCode).map(EnumVO::new).orElse(null);
 	}
 
 }

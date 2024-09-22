@@ -1,9 +1,9 @@
 package com.luman.sofa.common.dal.service;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.luman.sofa.common.dal.model.DO;
 import com.luman.sofa.common.dal.model.DP;
-import com.luman.sofa.common.dto.PageModel;
-import com.luman.sofa.common.dto.Paging;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +15,7 @@ import java.util.Optional;
  * @date 2024/04/02
  */
 @SuppressWarnings("unused")
-public interface CoreService<D extends DP> {
+public interface CoreService<D extends DP, P extends DO> {
 
 	/**
 	 * 保存
@@ -82,5 +82,5 @@ public interface CoreService<D extends DP> {
 	/**
 	 * 分页查询
 	 */
-	PageModel<D> listByPage(Paging paging);
+	IPage<D> listByPage(IPage<P> paging);
 }
