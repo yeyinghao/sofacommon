@@ -23,7 +23,6 @@ import java.time.LocalDateTime;
  * @date 2023/12/31
  */
 @Configuration
-@MapperScan("com.luman.smy.infra.domain.**.mapper")
 public class MybatisPlusConfig implements MetaObjectHandler {
 
 	@Override
