@@ -41,6 +41,10 @@ public class PageModel<T> extends DTO {
 	 */
 	private List<T> records;
 
+	/**
+	 * @param records
+	 * @return {@link PageModel }<{@link T }>
+	 */
 	public PageModel<T> setRecords(List<T> records) {
 		this.records = records;
 		return this;
@@ -66,6 +70,9 @@ public class PageModel<T> extends DTO {
 		return pageSize;
 	}
 
+	/**
+	 * @param pageSize
+	 */
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 	}
@@ -95,6 +102,9 @@ public class PageModel<T> extends DTO {
 		return totalSize;
 	}
 
+	/**
+	 * @param totalSize
+	 */
 	public void setTotalSize(Long totalSize) {
 		this.totalSize = totalSize;
 	}

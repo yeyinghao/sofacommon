@@ -22,7 +22,37 @@ import java.util.Objects;
  */
 @SuppressWarnings("unused")
 @UtilityClass
-public class CheckUtil {
+public class VarChecker {
+
+	/**
+	 * 业务异常
+	 *
+	 * @param errorEnum 错误枚举
+	 */
+	private void throwEx(ByErrorCode errorEnum) {
+		throw BizExceptionFactory.build(errorEnum);
+	}
+
+	/**
+	 * 业务异常
+	 *
+	 * @param errorEnum  错误枚举
+	 * @param subMessage 错误消息
+	 */
+	private void throwEx(ByErrorCode errorEnum, String subMessage) {
+		throw BizExceptionFactory.build(errorEnum, subMessage);
+	}
+
+	/**
+	 * 业务异常
+	 *
+	 * @param errorEnum   错误枚举
+	 * @param subMessages 错误消息
+	 */
+	private void throwEx(ByErrorCode errorEnum, String template, Object... subMessages) {
+		throw BizExceptionFactory.build(errorEnum, template, subMessages);
+	}
+
 
 	/**
 	 * 条件为false, 则抛异常
@@ -32,7 +62,7 @@ public class CheckUtil {
 	 */
 	public static void isTrue(boolean condition, ByErrorCode errorCode) {
 		if (!condition) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Must be true");
+			throwEx(errorCode);
 		}
 	}
 
@@ -45,7 +75,7 @@ public class CheckUtil {
 	 */
 	public static void isTrue(boolean condition, ByErrorCode errorCode, String subMessage) {
 		if (!condition) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -59,7 +89,7 @@ public class CheckUtil {
 	 */
 	public static void isTrue(boolean condition, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (!condition) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 
@@ -71,7 +101,7 @@ public class CheckUtil {
 	 */
 	public static void isFalse(boolean condition, ByErrorCode errorCode) {
 		if (condition) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Must be false");
+			throwEx(errorCode);
 		}
 	}
 
@@ -84,7 +114,7 @@ public class CheckUtil {
 	 */
 	public static void isFalse(boolean condition, ByErrorCode errorCode, String subMessage) {
 		if (condition) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -98,7 +128,7 @@ public class CheckUtil {
 	 */
 	public static void isFalse(boolean condition, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (condition) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 
@@ -110,7 +140,7 @@ public class CheckUtil {
 	 */
 	public static void notNull(Object obj, ByErrorCode errorCode) {
 		if (Objects.isNull(obj)) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Must not null");
+			throwEx(errorCode);
 		}
 	}
 
@@ -123,7 +153,7 @@ public class CheckUtil {
 	 */
 	public static void notNull(Object obj, ByErrorCode errorCode, String subMessage) {
 		if (Objects.isNull(obj)) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -137,7 +167,7 @@ public class CheckUtil {
 	 */
 	public static void notNull(Object obj, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (Objects.isNull(obj)) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 
@@ -149,7 +179,7 @@ public class CheckUtil {
 	 */
 	public static void isNull(Object obj, ByErrorCode errorCode) {
 		if (Objects.nonNull(obj)) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Must be null");
+			throwEx(errorCode);
 		}
 	}
 
@@ -162,7 +192,7 @@ public class CheckUtil {
 	 */
 	public static void isNull(Object obj, ByErrorCode errorCode, String subMessage) {
 		if (Objects.nonNull(obj)) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -176,7 +206,7 @@ public class CheckUtil {
 	 */
 	public static void isNull(Object obj, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (Objects.nonNull(obj)) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 
@@ -188,7 +218,7 @@ public class CheckUtil {
 	 */
 	public static void notBlank(String obj, ByErrorCode errorCode) {
 		if (Objects.nonNull(obj)) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Must not blank");
+			throwEx(errorCode);
 		}
 	}
 
@@ -201,7 +231,7 @@ public class CheckUtil {
 	 */
 	public static void notBlank(String obj, ByErrorCode errorCode, String subMessage) {
 		if (StrUtil.isBlank(obj)) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -215,7 +245,7 @@ public class CheckUtil {
 	 */
 	public static void notBlank(String obj, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (StrUtil.isBlank(obj)) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 
@@ -227,7 +257,7 @@ public class CheckUtil {
 	 */
 	public static void notEmpty(Iterable<?> collection, ByErrorCode errorCode) {
 		if (CollUtil.isEmpty(collection)) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Collection must not be empty: it must contain at least 1 element");
+			throwEx(errorCode);
 		}
 	}
 
@@ -240,7 +270,7 @@ public class CheckUtil {
 	 */
 	public static void notEmpty(Iterable<?> collection, ByErrorCode errorCode, String subMessage) {
 		if (CollUtil.isEmpty(collection)) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -254,7 +284,7 @@ public class CheckUtil {
 	 */
 	public static void notEmpty(Iterable<?> collection, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (CollUtil.isEmpty(collection)) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 
@@ -266,7 +296,7 @@ public class CheckUtil {
 	 */
 	public static void notEmpty(Map<?, ?> map, ByErrorCode errorCode) {
 		if (MapUtil.isEmpty(map)) {
-			ThrowUtil.throwEx(errorCode, "[Assertion failed] Map must not be empty: it must contain at least one entry");
+			throwEx(errorCode);
 		}
 	}
 
@@ -279,7 +309,7 @@ public class CheckUtil {
 	 */
 	public static void notEmpty(Map<?, ?> map, ByErrorCode errorCode, String subMessage) {
 		if (MapUtil.isEmpty(map)) {
-			ThrowUtil.throwEx(errorCode, subMessage);
+			throwEx(errorCode, subMessage);
 		}
 	}
 
@@ -293,7 +323,7 @@ public class CheckUtil {
 	 */
 	public static void notEmpty(Map<?, ?> map, ByErrorCode errorCode, String template, Object... subMessages) {
 		if (MapUtil.isEmpty(map)) {
-			ThrowUtil.throwEx(errorCode, StrUtil.format(template, subMessages));
+			throwEx(errorCode, template, subMessages);
 		}
 	}
 }

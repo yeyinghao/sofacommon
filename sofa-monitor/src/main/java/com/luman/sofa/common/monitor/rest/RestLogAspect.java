@@ -6,7 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.luman.sofa.common.constant.CommConstant;
 import com.luman.sofa.common.enums.ErrorEnum;
 import com.luman.sofa.common.exception.BizException;
-import com.luman.sofa.common.exception.CheckUtil;
+import com.luman.sofa.common.exception.VarChecker;
 import com.luman.sofa.common.helper.ResponseHelper;
 import com.luman.sofa.common.monitor.LogAspect;
 import com.luman.sofa.common.monitor.LogInfo;
@@ -83,6 +83,6 @@ public class RestLogAspect extends LogAspect {
 		// 获取校验结果
 		BeanValidationResult result = ValidationUtil.warpValidate(request);
 		// 校验失败 抛错误
-		CheckUtil.isTrue(result.isSuccess(), ErrorEnum.ILLEGAL_PARAMETER, result.getErrorMessages().stream().map(item -> item.getPropertyName() + CommConstant.COLON + item.getMessage()).collect(Collectors.joining(CommConstant.SEMICOLON)));
+		VarChecker.isTrue(result.isSuccess(), ErrorEnum.ILLEGAL_PARAMETER, result.getErrorMessages().stream().map(item -> item.getPropertyName() + CommConstant.COLON + item.getMessage()).collect(Collectors.joining(CommConstant.SEMICOLON)));
 	}
 }
