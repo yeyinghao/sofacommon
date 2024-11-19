@@ -5,8 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.luman.sofa.common.constant.CommConstant;
 import com.luman.sofa.common.dal.model.DO;
 import com.luman.sofa.common.dal.model.DP;
-import com.luman.sofa.common.dto.PageModel;
-import com.luman.sofa.common.dto.Paging;
+import com.luman.sofa.dto.PageModel;
+import com.luman.sofa.dto.Paging;
 
 import java.util.Objects;
 
@@ -18,7 +18,12 @@ public interface PageConverter {
 	 * @param page 分页
 	 */
 	default <D extends DP> PageModel<D> page2PageModel(IPage<D> page) {
-		return new PageModel<>(page.getSize(), page.getCurrent(), page.getTotal(), page.getRecords());
+		PageModel<D> pageModel = new PageModel<>();
+		pageModel.setRecords(page.getRecords());
+		pageModel.setPageSize(page.getSize());
+		pageModel.setPageIndex(page.getCurrent());
+		pageModel.setTotalSize(page.getTotal());
+		return pageModel;
 	}
 
 	/**

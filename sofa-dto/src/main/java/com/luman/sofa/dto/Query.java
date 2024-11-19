@@ -1,4 +1,4 @@
-package com.luman.sofa.common.dto;
+package com.luman.sofa.dto;
 
 import java.io.Serial;
 

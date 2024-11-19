@@ -1,6 +1,4 @@
-package com.luman.sofa.common.dto;
-
-import lombok.*;
+package com.luman.sofa.dto;
 
 import java.io.Serial;
 import java.util.List;
@@ -15,11 +13,6 @@ import static java.util.stream.Collectors.toList;
  * @date 2024/08/19
  */
 @SuppressWarnings({"unchecked", "unused"})
-@EqualsAndHashCode(callSuper = true)
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 public class PageModel<T> extends DTO {
 
 	/**
@@ -62,5 +55,56 @@ public class PageModel<T> extends DTO {
 	public <R> PageModel<R> convert(Function<? super T, ? extends R> mapper) {
 		List<R> collect = this.getRecords().stream().map(mapper).collect(toList());
 		return ((PageModel<R>) this).setRecords(collect);
+	}
+
+	/**
+	 * 获取pagesize
+	 *
+	 * @return {@link Long }
+	 */
+	public Long getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	/**
+	 * 获取pageindex
+	 *
+	 * @return {@link Long }
+	 */
+	public Long getPageIndex() {
+		return pageIndex;
+	}
+
+	/**
+	 * @param pageIndex
+	 */
+	public void setPageIndex(Long pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+
+	/**
+	 * 获取totalsize
+	 *
+	 * @return {@link Long }
+	 */
+	public Long getTotalSize() {
+		return totalSize;
+	}
+
+	public void setTotalSize(Long totalSize) {
+		this.totalSize = totalSize;
+	}
+
+	/**
+	 * 获取records
+	 *
+	 * @return {@link List }<{@link T }>
+	 */
+	public List<T> getRecords() {
+		return records;
 	}
 }

@@ -1,66 +1,11 @@
-package com.luman.sofa.common.dto;
+package com.luman.sofa.common.helper;
 
 import cn.hutool.core.util.StrUtil;
-import com.alipay.common.tracer.core.utils.TracerUtils;
 import com.luman.sofa.common.enums.ByErrorCode;
 import com.luman.sofa.common.enums.ErrorEnum;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import com.luman.sofa.dto.Response;
 
-import java.io.Serial;
-
-/**
- * 响应
- *
- * @author yeyinghao
- * @date 2024/03/29
- */
-@EqualsAndHashCode(callSuper = true)
-@Data
-@ToString
-public class Response<T> extends DTO {
-
-	/**
-	 * 串口版本uid
-	 */
-	@Serial
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * http响应状态
-	 */
-	private Integer code;
-
-	/**
-	 * 成功
-	 */
-	private boolean success;
-
-	/**
-	 * 错误代码
-	 */
-	private String errCode;
-
-	/**
-	 * 错误消息
-	 */
-	private String errMessage;
-
-	/**
-	 * 数据
-	 */
-	private T data;
-
-	/**
-	 * 请求id
-	 */
-	private String traceId = TracerUtils.getTraceId();
-
-	/**
-	 * 请求时间戳
-	 */
-	private Long timestamp = System.currentTimeMillis();
+public class ResponseHelper {
 
 	/**
 	 * 成功

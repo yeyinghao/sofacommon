@@ -17,8 +17,13 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.luman.sofacommon</groupId>
+            <artifactId>sofa-dto</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>cn.hutool</groupId>
-            <artifactId>hutool-core</artifactId>
+            <artifactId>hutool-all</artifactId>
         </dependency>
 
         <dependency>

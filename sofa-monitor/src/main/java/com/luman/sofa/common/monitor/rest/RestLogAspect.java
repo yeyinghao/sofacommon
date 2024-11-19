@@ -3,16 +3,16 @@ package com.luman.sofa.common.monitor.rest;
 import cn.hutool.extra.validation.BeanValidationResult;
 import cn.hutool.extra.validation.ValidationUtil;
 import cn.hutool.json.JSONUtil;
-import com.luman.sofa.common.dto.DTO;
-import com.luman.sofa.common.dto.Response;
-import com.luman.sofa.common.monitor.LogAspect;
-import com.luman.sofa.common.monitor.LogInfo;
 import com.luman.sofa.common.constant.CommConstant;
 import com.luman.sofa.common.enums.ErrorEnum;
 import com.luman.sofa.common.exception.BizException;
 import com.luman.sofa.common.exception.CheckUtil;
+import com.luman.sofa.common.helper.ResponseHelper;
+import com.luman.sofa.common.monitor.LogAspect;
+import com.luman.sofa.common.monitor.LogInfo;
 import com.luman.sofa.common.utils.LoggerUtil;
 import com.luman.sofa.common.utils.TimeUtil;
+import com.luman.sofa.dto.DTO;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -55,10 +55,10 @@ public class RestLogAspect extends LogAspect {
 		} catch (BizException e) {
 			LoggerUtil.info(log, e);
 			logInfo.setRes(!e.isError());
-			resp = Response.fail(e.getByErrorCode(), e.getMessage());
+			resp = ResponseHelper.fail(e.getByErrorCode(), e.getMessage());
 		} catch (Throwable e) {
 			LoggerUtil.error(log, e);
-			resp = Response.fail(ErrorEnum.SYS_ERROR);
+			resp = ResponseHelper.fail(ErrorEnum.SYS_ERROR);
 		} finally {
 			logInfo.setResponse(resp);
 			printLog(logInfo);

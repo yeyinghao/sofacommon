@@ -1,8 +1,4 @@
-package com.luman.sofa.common.dto;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+package com.luman.sofa.dto;
 
 import java.io.Serial;
 
@@ -12,9 +8,6 @@ import java.io.Serial;
  * @author yeyinghao
  * @date 2024/08/19
  */
-@EqualsAndHashCode(callSuper = true)
-@Data
-@ToString
 public class Paging extends DTO {
 
 	/**
@@ -33,4 +26,19 @@ public class Paging extends DTO {
 	 */
 	private Long pageIndex;
 
+	public Long getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getPageIndex() {
+		return pageIndex;
+	}
+
+	public void setPageIndex(Long pageIndex) {
+		this.pageIndex = pageIndex;
+	}
 }
