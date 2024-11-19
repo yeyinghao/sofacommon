@@ -1,6 +1,7 @@
 package com.luman.sofa.common.enums;
 
 import com.luman.sofa.common.constant.HttpConstant;
+import com.luman.sofa.dto.enums.ByErrorCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

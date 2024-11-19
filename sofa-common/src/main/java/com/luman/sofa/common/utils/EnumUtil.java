@@ -1,7 +1,7 @@
 package com.luman.sofa.common.utils;
 
-import com.luman.sofa.common.enums.ByCode;
-import com.luman.sofa.common.enums.ByStringCode;
+import com.luman.sofa.dto.enums.ByCode;
+import com.luman.sofa.dto.enums.ByStringCode;
 import com.luman.sofa.dto.EnumVO;
 import lombok.experimental.UtilityClass;
 

@@ -2,7 +2,7 @@ package com.luman.sofa.common.exception;
 
 
 import cn.hutool.core.util.StrUtil;
-import com.luman.sofa.common.enums.ByErrorCode;
+import com.luman.sofa.dto.enums.ByErrorCode;
 
 /**
  * 业务exceptionfactory

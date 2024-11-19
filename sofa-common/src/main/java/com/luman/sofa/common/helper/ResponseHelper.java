@@ -1,7 +1,7 @@
 package com.luman.sofa.common.helper;
 
 import cn.hutool.core.util.StrUtil;
-import com.luman.sofa.common.enums.ByErrorCode;
+import com.luman.sofa.dto.enums.ByErrorCode;
 import com.luman.sofa.common.enums.ErrorEnum;
 import com.luman.sofa.dto.Response;
 

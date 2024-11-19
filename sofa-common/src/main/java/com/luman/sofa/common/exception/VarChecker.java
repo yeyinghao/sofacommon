@@ -8,7 +8,7 @@ package com.luman.sofa.common.exception;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.StrUtil;
-import com.luman.sofa.common.enums.ByErrorCode;
+import com.luman.sofa.dto.enums.ByErrorCode;
 import lombok.experimental.UtilityClass;
 
 import java.util.Map;

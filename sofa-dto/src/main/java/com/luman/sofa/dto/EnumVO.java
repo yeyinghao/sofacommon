@@ -1,5 +1,8 @@
 package com.luman.sofa.dto;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.io.Serial;
 
 /**
@@ -8,6 +11,8 @@ import java.io.Serial;
  * @author yeyinghao
  * @date 2024/08/19
  */
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class EnumVO extends VO {
 
 	/**
@@ -25,20 +30,4 @@ public class EnumVO extends VO {
 	 * 枚举描述
 	 */
 	private String desc;
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
 }

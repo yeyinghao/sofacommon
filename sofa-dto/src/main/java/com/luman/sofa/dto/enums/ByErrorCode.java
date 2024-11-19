@@ -2,7 +2,7 @@
  * QQ: 1113531030 WX: missyeyh Phone: 17689397484 Copyright (c) Ye Yinghao 2022.1 - 2023.2
  */
 
-package com.luman.sofa.common.enums;
+package com.luman.sofa.dto.enums;
 
 /**
  * 通过错误代码

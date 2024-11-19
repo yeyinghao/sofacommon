@@ -1,5 +1,8 @@
 package com.luman.sofa.dto;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.io.Serial;
 
 /**
@@ -8,6 +11,8 @@ import java.io.Serial;
  * @author yeyinghao
  * @date 2024/03/29
  */
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class Response<T> extends DTO {
 
 	/**
@@ -51,115 +56,4 @@ public class Response<T> extends DTO {
 	 */
 	private Long timestamp;
 
-	/**
-	 * 获取code
-	 *
-	 * @return {@link Integer }
-	 */
-	public Integer getCode() {
-		return code;
-	}
-
-	/**
-	 * @param code
-	 */
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public boolean isSuccess() {
-		return success;
-	}
-
-	/**
-	 * @param success
-	 */
-	public void setSuccess(boolean success) {
-		this.success = success;
-	}
-
-	/**
-	 * 获取errcode
-	 *
-	 * @return {@link String }
-	 */
-	public String getErrCode() {
-		return errCode;
-	}
-
-	/**
-	 * @param errCode
-	 */
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	/**
-	 * 获取errmessage
-	 *
-	 * @return {@link String }
-	 */
-	public String getErrMessage() {
-		return errMessage;
-	}
-
-	/**
-	 * @param errMessage
-	 */
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
-	/**
-	 * 获取data
-	 *
-	 * @return {@link T }
-	 */
-	public T getData() {
-		return data;
-	}
-
-	/**
-	 * @param data
-	 */
-	public void setData(T data) {
-		this.data = data;
-	}
-
-	/**
-	 * 获取traceid
-	 *
-	 * @return {@link String }
-	 */
-	public String getTraceId() {
-		return traceId;
-	}
-
-	/**
-	 * settraceid
-	 *
-	 * @param traceId traceid
-	 */
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
-
-	/**
-	 * 获取timestamp
-	 *
-	 * @return {@link Long }
-	 */
-	public Long getTimestamp() {
-		return timestamp;
-	}
-
-	/**
-	 * @param timestamp
-	 */
-	public void setTimestamp(Long timestamp) {
-		this.timestamp = timestamp;
-	}
 }
