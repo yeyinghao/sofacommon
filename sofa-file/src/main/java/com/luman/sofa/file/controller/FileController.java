@@ -27,7 +27,7 @@ public class FileController {
 	}
 
 	@PostMapping("/getFileDownloadUrl")
-	public Response<FileVO> getFileUploadUrl(@RequestBody FileUrlDownloadCmd cmd) {
+	public Response<FileVO> getFileDownloadUrl(@RequestBody FileUrlDownloadCmd cmd) {
 		return ResponseHelper.success(fileManager.getFileDownloadUrl(cmd));
 	}
 
