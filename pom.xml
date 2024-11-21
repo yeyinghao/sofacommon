@@ -43,6 +43,9 @@
         <module>sofa-dal</module>
         <module>sofa-common</module>
         <module>sofa-dto</module>
+        <module>sofa-cache</module>
+        <module>sofa-file</module>
+        <module>sofa-bootstrap</module>
     </modules>
 
     <dependencyManagement>
@@ -66,6 +69,21 @@
             <dependency>
                 <groupId>com.luman.sofacommon</groupId>
                 <artifactId>sofa-dto</artifactId>
+                <version>${sofacommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luman.sofacommon</groupId>
+                <artifactId>sofa-cache</artifactId>
+                <version>${sofacommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luman.sofacommon</groupId>
+                <artifactId>sofa-file</artifactId>
+                <version>${sofacommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luman.sofacommon</groupId>
+                <artifactId>sofa-bootstrap</artifactId>
                 <version>${sofacommon.version}</version>
             </dependency>
             <!--Project modules End-->

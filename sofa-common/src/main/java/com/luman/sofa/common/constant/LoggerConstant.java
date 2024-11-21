@@ -29,13 +29,28 @@ public interface LoggerConstant extends BaseConstant {
 	String BIZ_LOG = "BIZ_LOG";
 
 	/**
-	 * api调用日志
+	 * facade调用日志
 	 */
 	String FACADE_LOG = "FACADE_LOG";
 
 	/**
-	 * api调用日志
+	 * client调用日志
 	 */
 	String CLIENT_LOG = "CLIENT_LOG";
+
+	/**
+	 * 缓存调用日志
+	 */
+	String CACHE_LOG = "CACHE_LOG";
+
+	/**
+	 * 文件调用日志
+	 */
+	String FILE_LOG = "FILE_LOG";
+
+	/**
+	 * 锁调用日志
+	 */
+	String LOCK_LOG = "LOCK_LOG";
 
 }
