@@ -1,4 +1,4 @@
-package com.luman.sofa.file.controller.model;
+package com.luman.sofa.file.controller.cmd;
 
 import com.luman.sofa.dto.Command;
 import lombok.Data;

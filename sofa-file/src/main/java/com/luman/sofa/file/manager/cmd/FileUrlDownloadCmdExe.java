@@ -1,7 +1,7 @@
 package com.luman.sofa.file.manager.cmd;
 
 import com.luman.sofa.dto.FileVO;
-import com.luman.sofa.file.controller.model.FileUrlDownloadCmd;
+import com.luman.sofa.file.controller.cmd.FileUrlDownloadCmd;
 import com.luman.sofa.file.service.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

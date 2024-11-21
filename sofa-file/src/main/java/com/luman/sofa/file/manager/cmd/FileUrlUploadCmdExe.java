@@ -4,7 +4,7 @@ import com.luman.sofa.common.enums.ErrorEnum;
 import com.luman.sofa.common.exception.BizExceptionFactory;
 import com.luman.sofa.common.utils.EnumUtil;
 import com.luman.sofa.dto.FileVO;
-import com.luman.sofa.file.controller.model.FileUrlUploadCmd;
+import com.luman.sofa.file.controller.cmd.FileUrlUploadCmd;
 import com.luman.sofa.file.integration.enums.FileTypeEnum;
 import com.luman.sofa.file.integration.util.FileUtil;
 import com.luman.sofa.file.service.FileService;
