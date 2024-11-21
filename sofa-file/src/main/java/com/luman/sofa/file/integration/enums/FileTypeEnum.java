@@ -26,12 +26,12 @@ public enum FileTypeEnum implements ByStringCode {
 	/**
 	 * 业务文件
 	 */
-	BIZ("BIZ", "biz/", "业务文件"),
+	BIZ("BIZ", "biz", "业务文件"),
 
 	/**
 	 * 临时文件
 	 */
-	TEMPORARY("TEMPORARY", "temporary/", "临时文件"),
+	TEMPORARY("TEMPORARY", "temporary", "临时文件"),
 
 	;
 
