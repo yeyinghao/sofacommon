@@ -236,6 +236,13 @@
                 <artifactId>hibernate-validator</artifactId>
                 <version>8.0.1.Final</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okio</groupId>
+                <artifactId>okio</artifactId>
+                <version>3.6.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
