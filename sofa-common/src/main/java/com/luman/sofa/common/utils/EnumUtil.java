@@ -1,6 +1,8 @@
 package com.luman.sofa.common.utils;
 
 import com.luman.sofa.dto.enums.ByCode;
+import com.luman.sofa.dto.enums.ByStringCode;
+import com.luman.sofa.dto.EnumVO;
 import lombok.experimental.UtilityClass;
 
 import java.util.Objects;
@@ -33,5 +35,35 @@ public class EnumUtil {
 			}
 		}
 		return Optional.empty();
+	}
+
+	/**
+	 * 获取名称
+	 */
+	public static <M extends ByStringCode> String getName(M byCode) {
+		return Optional.ofNullable(byCode).map(ByStringCode::getCode).orElse(null);
+	}
+
+	/**
+	 * enum2vo
+	 *
+	 * @param byCode
+	 * @return {@link EnumVO }
+	 */
+	public static <M extends ByStringCode> EnumVO enum2VO(M byCode) {
+		return Optional.ofNullable(byCode).map(EnumUtil::buildEnumVO).orElse(null);
+	}
+
+	/**
+	 * 构建enumvo
+	 *
+	 * @param byCode
+	 * @return {@link EnumVO }
+	 */
+	private <M extends ByCode<T>, T> EnumVO buildEnumVO(M byCode) {
+		EnumVO enumVO = new EnumVO();
+		enumVO.setCode(String.valueOf(byCode.getCode()));
+		enumVO.setDesc(byCode.getDesc());
+		return enumVO;
 	}
 }
