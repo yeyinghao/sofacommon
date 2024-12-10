@@ -45,6 +45,8 @@
         <module>sofa-dto</module>
         <module>sofa-cache</module>
         <module>sofa-file</module>
+        <module>sofa-satoken</module>
+        <module>sofa-task</module>
         <module>sofa-bootstrap</module>
     </modules>
 
@@ -79,6 +81,16 @@
             <dependency>
                 <groupId>com.luman.sofacommon</groupId>
                 <artifactId>sofa-file</artifactId>
+                <version>${sofacommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luman.sofacommon</groupId>
+                <artifactId>sofa-satoken</artifactId>
+                <version>${sofacommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.luman.sofacommon</groupId>
+                <artifactId>sofa-task</artifactId>
                 <version>${sofacommon.version}</version>
             </dependency>
             <dependency>
@@ -183,12 +195,6 @@
                 <version>${minio.version}</version>
             </dependency>
 
-            <!-- xxljob任务 -->
-            <dependency>
-                <groupId>com.xuxueli</groupId>
-                <artifactId>xxl-job-core</artifactId>
-                <version>${xxl-job.version}</version>
-            </dependency>
 
             <!-- json加解密 -->
             <dependency>
@@ -241,6 +247,12 @@
                 <groupId>com.squareup.okio</groupId>
                 <artifactId>okio</artifactId>
                 <version>3.6.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tech.powerjob</groupId>
+                <artifactId>powerjob-worker-spring-boot-starter</artifactId>
+                <version>4.3.2</version>
             </dependency>
 
         </dependencies>
