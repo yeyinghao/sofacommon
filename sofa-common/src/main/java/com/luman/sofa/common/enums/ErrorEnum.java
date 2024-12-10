@@ -38,6 +38,16 @@ public enum ErrorEnum implements ByErrorCode {
 	BIZ_ERROR("BIZ_ERROR", HttpConstant.BAD_REQUEST, "业务异常"),
 
 	/**
+	 * 空指针异常
+	 */
+	NULL_ERROR("NULL_ERROR", HttpConstant.BAD_REQUEST, "空指针异常"),
+
+	/**
+	 * 锁异常
+	 */
+	LOCK_ERROR("LOCK_ERROR", HttpConstant.BAD_REQUEST, "锁异常"),
+
+	/**
 	 * 未授权
 	 */
 	FORBIDDEN("FORBIDDEN", HttpConstant.FORBIDDEN, "未授权"),

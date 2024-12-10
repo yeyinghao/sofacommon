@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @ToString
-public class DO {
+public class PO {
 
 	/**
 	 * id

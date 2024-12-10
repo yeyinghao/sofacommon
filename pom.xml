@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <sofa.boot.version>4.3.0</sofa.boot.version>
+        <sofa.boot.version>4.4.0</sofa.boot.version>
         <sofacommon.version>1.0.0-SNAPSHOT</sofacommon.version>
 
         <nacos.version>0.3.0-RC</nacos.version>
@@ -30,7 +30,7 @@
         <mybatis-plus.version>3.5.7</mybatis-plus.version>
         <pagehelper.version>1.4.1</pagehelper.version>
         <jasypt.version>3.0.5</jasypt.version>
-        <redisson.version>3.32.0</redisson.version>
+        <redisson.version>3.39.0</redisson.version>
         <minio.version>8.0.3</minio.version>
         <xxl-job.version>2.4.0</xxl-job.version>
         <poi-ooxml.version>4.1.2</poi-ooxml.version>

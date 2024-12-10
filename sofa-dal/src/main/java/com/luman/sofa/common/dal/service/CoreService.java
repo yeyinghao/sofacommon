@@ -2,7 +2,7 @@ package com.luman.sofa.common.dal.service;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.luman.sofa.common.dal.model.DO;
+import com.luman.sofa.common.dal.model.PO;
 import com.luman.sofa.common.dal.model.DP;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.Optional;
  * @date 2024/04/02
  */
 @SuppressWarnings("unused")
-public interface CoreService<D extends DP, P extends DO> {
+public interface CoreService<D extends DP, P extends PO> {
 
 	/**
 	 * 保存

@@ -3,7 +3,7 @@ package com.luman.sofa.common.dal.convert;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.luman.sofa.common.constant.CommConstant;
-import com.luman.sofa.common.dal.model.DO;
+import com.luman.sofa.common.dal.model.PO;
 import com.luman.sofa.common.dal.model.DP;
 import com.luman.sofa.dto.PageModel;
 import com.luman.sofa.dto.Paging;
@@ -32,7 +32,7 @@ public interface PageConverter {
 	 * @param paging 分页
 	 * @return {@link IPage }<{@link P }>
 	 */
-	default <P extends DO> IPage<P> paging2Page(Paging paging) {
+	default <P extends PO> IPage<P> paging2Page(Paging paging) {
 		if (Objects.isNull(paging) || Objects.isNull(paging.getPageIndex()) || Objects.isNull(paging.getPageSize())) {
 			return new Page<>(CommConstant.DEFAULT_PAGE_INDEX, CommConstant.DEFAULT_PAGE_SIZE);
 		}

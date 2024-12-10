@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luman.sofa.common.dal.convert.DataConvert;
-import com.luman.sofa.common.dal.model.DO;
+import com.luman.sofa.common.dal.model.PO;
 import com.luman.sofa.common.dal.model.DP;
 import com.luman.sofa.common.dal.service.CoreService;
 import com.luman.sofa.common.monitor.dal.DalLog;
@@ -20,11 +20,11 @@ import java.util.Optional;
  */
 @SuppressWarnings("unused")
 @DalLog
-public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends BaseMapper<P>> extends ServiceImpl<M, P> implements CoreService<D, P>, DataConvert<P, D> {
+public abstract class CoreServiceImpl<D extends DP, P extends PO, M extends BaseMapper<P>> extends ServiceImpl<M, P> implements CoreService<D, P>, DataConvert<P, D> {
 
 	@Override
 	public Long save(D entity) {
-		P po = convertToPO(entity);
+		P po = convert(entity);
 		save(po);
 		entity.setId(po.getId());
 		return po.getId();
@@ -32,7 +32,7 @@ public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends Base
 
 	@Override
 	public Long saveOrUpdate(D entity) {
-		P po = convertToPO(entity);
+		P po = convert(entity);
 		saveOrUpdate(po);
 		entity.setId(po.getId());
 		return po.getId();
@@ -40,7 +40,7 @@ public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends Base
 
 	@Override
 	public boolean saveBatch(List<D> entities) {
-		return saveBatch(convertToPOs(entities));
+		return saveBatch(convert2POs(entities));
 	}
 
 	@Override
@@ -55,26 +55,26 @@ public abstract class CoreServiceImpl<D extends DP, P extends DO, M extends Base
 
 	@Override
 	public boolean updateById(D entity) {
-		return updateById(convertToPO(entity));
+		return updateById(convert(entity));
 	}
 
 	@Override
 	public Optional<D> findById(Long id) {
-		return Optional.ofNullable(getById(id)).map(this::convertToDP);
+		return Optional.ofNullable(getById(id)).map(this::convert);
 	}
 
 	@Override
 	public List<D> findAll() {
-		return convertToDPs(list());
+		return convert2DPs(list());
 	}
 
 	@Override
 	public List<D> findByIds(List<Long> ids) {
-		return convertToDPs(listByIds(ids));
+		return convert2DPs(listByIds(ids));
 	}
 
 	@Override
 	public IPage<D> listByPage(IPage<P> paging) {
-		return lambdaQuery().page(paging).convert(this::convertToDP);
+		return lambdaQuery().page(paging).convert(this::convert);
 	}
 }

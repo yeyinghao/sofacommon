@@ -14,10 +14,10 @@ import org.springframework.stereotype.Component;
  * @author yeyinghao
  * @date 2023/09/16
  */
+@ConfigurationProperties(prefix = "smy.cache")
 @Component
 @EnableCaching
 @Data
-@ConfigurationProperties(prefix = "smy.cache")
 @Slf4j
 public class CacheConfig {
 

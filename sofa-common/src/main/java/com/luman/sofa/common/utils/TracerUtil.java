@@ -1,7 +1,7 @@
 package com.luman.sofa.common.utils;
 
-import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
+import com.alipay.common.tracer.core.generator.TraceIdGenerator;
 import com.alipay.common.tracer.core.utils.TracerUtils;
 import com.luman.sofa.common.constant.CommConstant;
 import lombok.experimental.UtilityClass;
@@ -36,7 +36,7 @@ public class TracerUtil {
 	private static void genThreadTraceId() {
 		String traceId = TracerUtils.getTraceId();
 		if (StrUtil.isBlank(traceId)) {
-			traceId = IdUtil.simpleUUID();
+			traceId = TraceIdGenerator.generate();
 		}
 		MDC.put(CommConstant.TRACE_ID, traceId);
 	}

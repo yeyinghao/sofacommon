@@ -31,11 +31,6 @@ public class DP {
 	private LocalDateTime updateTime;
 
 	/**
-	 * 扩展信息-map
-	 */
-	private String extInfo;
-
-	/**
 	 * 状态
 	 */
 	private Boolean status;

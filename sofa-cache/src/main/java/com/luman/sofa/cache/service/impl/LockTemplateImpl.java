@@ -5,7 +5,7 @@ import com.luman.sofa.cache.service.LockTemplate;
 import com.luman.sofa.common.constant.LoggerConstant;
 import com.luman.sofa.common.enums.ErrorEnum;
 import com.luman.sofa.common.exception.VarChecker;
-import com.luman.sofa.dto.enums.ByStringCode;
+import com.luman.sofa.dto.enums.ByLockCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -31,8 +31,8 @@ public class LockTemplateImpl implements LockTemplate {
 	private final CacheService cacheService;
 
 	@Override
-	public void lock(ByStringCode byStringCode, Object bizId, Runnable runnable) {
-		Lock rLock = getLock(byStringCode, bizId);
+	public void lock(ByLockCode byLockCode, Object bizId, Runnable runnable) {
+		Lock rLock = getLock(byLockCode, bizId);
 		try {
 			rLock.lock();
 			runnable.run();
@@ -42,8 +42,8 @@ public class LockTemplateImpl implements LockTemplate {
 	}
 
 	@Override
-	public <R> R lock(ByStringCode byStringCode, Object bizId, Supplier<R> supplier) {
-		Lock rLock = getLock(byStringCode, bizId);
+	public <R> R lock(ByLockCode byLockCode, Object bizId, Supplier<R> supplier) {
+		Lock rLock = getLock(byLockCode, bizId);
 		try {
 			rLock.lock();
 			return supplier.get();
@@ -53,8 +53,8 @@ public class LockTemplateImpl implements LockTemplate {
 	}
 
 	@Override
-	public void tryLock(ByStringCode byStringCode, Object bizId, Runnable runnable) {
-		Lock rLock = getLock(byStringCode, bizId);
+	public void tryLock(ByLockCode byLockCode, Object bizId, Runnable runnable) {
+		Lock rLock = getLock(byLockCode, bizId);
 		try {
 			if (!rLock.tryLock()) {
 				return;
@@ -66,8 +66,8 @@ public class LockTemplateImpl implements LockTemplate {
 	}
 
 	@Override
-	public <R> R tryLock(ByStringCode byStringCode, Object bizId, Supplier<R> supplier) {
-		Lock rLock = getLock(byStringCode, bizId);
+	public <R> R tryLock(ByLockCode byLockCode, Object bizId, Supplier<R> supplier) {
+		Lock rLock = getLock(byLockCode, bizId);
 		try {
 			if (!rLock.tryLock()) {
 				return null;
@@ -79,8 +79,8 @@ public class LockTemplateImpl implements LockTemplate {
 	}
 
 	@Override
-	public void tryLockEx(ByStringCode byStringCode, Object bizId, Runnable runnable) {
-		Lock rLock = getLock(byStringCode, bizId);
+	public void tryLockEx(ByLockCode byLockCode, Object bizId, Runnable runnable) {
+		Lock rLock = getLock(byLockCode, bizId);
 		try {
 			VarChecker.isTrue(rLock.tryLock(), ErrorEnum.BIZ_ERROR, "获取分布式锁失败");
 			runnable.run();
@@ -90,8 +90,8 @@ public class LockTemplateImpl implements LockTemplate {
 	}
 
 	@Override
-	public <R> R tryLockEx(ByStringCode byStringCode, Object bizId, Supplier<R> supplier) {
-		Lock rLock = getLock(byStringCode, bizId);
+	public <R> R tryLockEx(ByLockCode byLockCode, Object bizId, Supplier<R> supplier) {
+		Lock rLock = getLock(byLockCode, bizId);
 		try {
 			VarChecker.isTrue(rLock.tryLock(), ErrorEnum.BIZ_ERROR, "获取分布式锁失败");
 			return supplier.get();
@@ -103,14 +103,14 @@ public class LockTemplateImpl implements LockTemplate {
 	/**
 	 * 获取rlock
 	 *
-	 * @param byStringCode 基础枚举
+	 * @param byLockCode 基础枚举
 	 * @param bizId    业务id
 	 * @return {@link Lock}
 	 */
-	private Lock getLock(ByStringCode byStringCode, Object bizId) {
+	private Lock getLock(ByLockCode byLockCode, Object bizId) {
 		if (Objects.isNull(bizId)) {
-			return cacheService.getLock(byStringCode.getCode());
+			return cacheService.getLock(byLockCode.getCode());
 		}
-		return cacheService.getLock(byStringCode.getCode() + bizId);
+		return cacheService.getLock(byLockCode.getCode() + bizId);
 	}
 }
