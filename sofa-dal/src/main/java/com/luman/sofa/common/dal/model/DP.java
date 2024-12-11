@@ -3,6 +3,7 @@ package com.luman.sofa.common.dal.model;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @ToString
-public class DP {
+public class DP implements Serializable {
 
 	/**
 	 * id

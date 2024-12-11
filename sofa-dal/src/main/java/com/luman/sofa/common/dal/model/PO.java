@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -19,7 +20,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @ToString
-public class PO {
+public class PO implements Serializable {
 
 	/**
 	 * id
