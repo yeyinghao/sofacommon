@@ -1,4 +1,4 @@
-package com.luman.sofa.satoken.handler;
+package com.luman.sofa.common.satoken.handler;
 
 
 import cn.dev33.satoken.exception.NotLoginException;

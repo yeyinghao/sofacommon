@@ -1,4 +1,4 @@
-package com.luman.sofa.task;
+package com.luman.sofa.common.task;
 
 import com.luman.sofa.dto.enums.ByTaskCode;
 import org.springframework.boot.ApplicationRunner;

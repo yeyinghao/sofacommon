@@ -1,9 +1,9 @@
-package com.luman.sofa.task.template;
+package com.luman.sofa.common.task.template;
 
 
 import com.luman.sofa.common.exception.BizException;
-import com.luman.sofa.task.TaskService;
-import com.luman.sofa.task.model.TaskResult;
+import com.luman.sofa.common.task.TaskService;
+import com.luman.sofa.common.task.model.TaskResult;
 import tech.powerjob.worker.core.processor.ProcessResult;
 import tech.powerjob.worker.core.processor.TaskContext;
 import tech.powerjob.worker.core.processor.sdk.BasicProcessor;

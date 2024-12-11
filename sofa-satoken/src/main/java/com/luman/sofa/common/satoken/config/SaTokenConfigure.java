@@ -3,7 +3,7 @@
  * 2022.1 - 2024.1
  */
 
-package com.luman.sofa.satoken.config;
+package com.luman.sofa.common.satoken.config;
 
 import cn.dev33.satoken.interceptor.SaInterceptor;
 import cn.dev33.satoken.jwt.StpLogicJwtForStateless;

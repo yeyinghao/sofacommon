@@ -3,11 +3,11 @@
  * 2022.1 - 2024.3
  */
 
-package com.luman.sofa.satoken.util;
+package com.luman.sofa.common.satoken.util;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.StrUtil;
-import com.luman.sofa.satoken.constant.SaTokenConstant;
+import com.luman.sofa.common.satoken.constant.SaTokenConstant;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 

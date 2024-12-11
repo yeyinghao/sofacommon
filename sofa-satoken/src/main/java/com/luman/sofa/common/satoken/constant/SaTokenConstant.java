@@ -3,7 +3,7 @@
  * 2022.1 - 2024.1
  */
 
-package com.luman.sofa.satoken.constant;
+package com.luman.sofa.common.satoken.constant;
 
 
 import com.luman.sofa.common.constant.BaseConstant;

@@ -3,7 +3,7 @@
  * 2022.1 - 2024.3
  */
 
-package com.luman.sofa.task.model;
+package com.luman.sofa.common.task.model;
 
 import com.luman.sofa.dto.enums.ByTaskCode;
 import lombok.AllArgsConstructor;
