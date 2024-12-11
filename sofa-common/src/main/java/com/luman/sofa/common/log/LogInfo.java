@@ -1,4 +1,4 @@
-package com.luman.sofa.common.monitor;
+package com.luman.sofa.common.log;
 
 import lombok.Data;
 import org.slf4j.Logger;

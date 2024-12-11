@@ -3,11 +3,12 @@ package com.luman.sofa.common.dal.service.impl;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.luman.sofa.common.constant.LoggerConstant;
 import com.luman.sofa.common.dal.convert.DataConvert;
-import com.luman.sofa.common.dal.model.PO;
 import com.luman.sofa.common.dal.model.DP;
+import com.luman.sofa.common.dal.model.PO;
 import com.luman.sofa.common.dal.service.CoreService;
-import com.luman.sofa.common.monitor.dal.DalLog;
+import com.luman.sofa.common.log.Logged;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +20,7 @@ import java.util.Optional;
  * @date 2024/04/19
  */
 @SuppressWarnings("unused")
-@DalLog
+@Logged(topic = LoggerConstant.DAL_LOG)
 public abstract class CoreServiceImpl<D extends DP, P extends PO, M extends BaseMapper<P>> extends ServiceImpl<M, P> implements CoreService<D, P>, DataConvert<P, D> {
 
 	@Override

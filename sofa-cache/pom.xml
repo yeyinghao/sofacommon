@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>com.luman.sofacommon</groupId>
-            <artifactId>sofa-monitor</artifactId>
+            <artifactId>sofa-common</artifactId>
         </dependency>
 
         <!-- 缓存redisson -->

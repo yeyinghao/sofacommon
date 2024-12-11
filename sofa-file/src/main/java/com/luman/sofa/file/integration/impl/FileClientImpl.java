@@ -10,7 +10,7 @@ import cn.hutool.http.Header;
 import com.luman.sofa.common.constant.LoggerConstant;
 import com.luman.sofa.common.enums.ErrorEnum;
 import com.luman.sofa.common.exception.VarChecker;
-import com.luman.sofa.common.monitor.log.Logged;
+import com.luman.sofa.common.log.Logged;
 import com.luman.sofa.file.integration.FileClient;
 import com.luman.sofa.file.integration.config.FileConfig;
 import io.minio.*;

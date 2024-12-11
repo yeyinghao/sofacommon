@@ -16,7 +16,7 @@ public interface LoggerConstant extends BaseConstant {
 	/**
 	 * api调用日志
 	 */
-	String WEB_LOG = "WEB_LOG";
+	String REST_LOG = "REST_LOG";
 
 	/**
 	 * 数据库日志
@@ -27,21 +27,6 @@ public interface LoggerConstant extends BaseConstant {
 	 * 业务日志
 	 */
 	String BIZ_LOG = "BIZ_LOG";
-
-	/**
-	 * facade调用日志
-	 */
-	String FACADE_LOG = "FACADE_LOG";
-
-	/**
-	 * client调用日志
-	 */
-	String CLIENT_LOG = "CLIENT_LOG";
-
-	/**
-	 * 缓存调用日志
-	 */
-	String CACHE_LOG = "CACHE_LOG";
 
 	/**
 	 * 文件调用日志

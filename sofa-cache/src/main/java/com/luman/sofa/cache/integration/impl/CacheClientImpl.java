@@ -8,7 +8,7 @@ package com.luman.sofa.cache.integration.impl;
 import com.luman.sofa.cache.integration.CacheClient;
 import com.luman.sofa.cache.integration.config.CacheConfig;
 import com.luman.sofa.common.constant.LoggerConstant;
-import com.luman.sofa.common.monitor.log.Logged;
+import com.luman.sofa.common.log.Logged;
 import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.*;
@@ -24,7 +24,7 @@ import java.time.Duration;
  */
 @Service
 @RequiredArgsConstructor
-@Logged(topic = LoggerConstant.CACHE_LOG)
+@Logged(topic = LoggerConstant.CAL_LOG)
 public class CacheClientImpl implements CacheClient {
 
 	/**

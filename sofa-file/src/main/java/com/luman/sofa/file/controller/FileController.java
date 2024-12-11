@@ -1,7 +1,8 @@
 package com.luman.sofa.file.controller;
 
+import com.luman.sofa.common.constant.LoggerConstant;
 import com.luman.sofa.common.helper.ResponseHelper;
-import com.luman.sofa.common.monitor.rest.RestLog;
+import com.luman.sofa.common.log.Logged;
 import com.luman.sofa.dto.FileVO;
 import com.luman.sofa.dto.Response;
 import com.luman.sofa.file.controller.cmd.FileUrlDownloadCmd;
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RestLog
 @RequestMapping("/api/file")
 @RequiredArgsConstructor
+@Logged(topic = LoggerConstant.REST_LOG)
 public class FileController {
 
 	private final FileManager fileManager;

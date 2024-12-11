@@ -1,4 +1,4 @@
-package com.luman.sofa.common.monitor;
+package com.luman.sofa.common.log;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;

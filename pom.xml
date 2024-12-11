@@ -39,7 +39,6 @@
     </properties>
 
     <modules>
-        <module>sofa-monitor</module>
         <module>sofa-dal</module>
         <module>sofa-common</module>
         <module>sofa-dto</module>
@@ -56,11 +55,6 @@
             <dependency>
                 <groupId>com.luman.sofacommon</groupId>
                 <artifactId>sofa-dal</artifactId>
-                <version>${sofacommon.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.luman.sofacommon</groupId>
-                <artifactId>sofa-monitor</artifactId>
                 <version>${sofacommon.version}</version>
             </dependency>
             <dependency>

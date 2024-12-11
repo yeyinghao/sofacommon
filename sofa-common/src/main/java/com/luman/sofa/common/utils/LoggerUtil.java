@@ -135,7 +135,7 @@ public class LoggerUtil {
 	 * @param template 模板
 	 * @param messages 消息
 	 */
-	public static void info(Logger logger, String template, Object... messages) {
+	public static void /**/info(Logger logger, String template, Object... messages) {
 		logger.info(StrUtil.format(template, messages));
 	}
 

@@ -1,4 +1,4 @@
-package com.luman.sofa.common.monitor.rest;
+package com.luman.sofa.common.log;
 
 
 import com.luman.sofa.common.constant.LoggerConstant;
@@ -9,20 +9,24 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * web日志
+ * 日志
  *
  * @author yeyinghao
  * @date 2024/08/19
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RestLog {
+public @interface Logged {
+
+	boolean valid() default false;
+
+	boolean web() default false;
 
 	/**
 	 * 主题
 	 *
 	 * @return {@link String }
 	 */
-	String topic() default LoggerConstant.WEB_LOG;
+	String topic() default LoggerConstant.BIZ_LOG;
 
 }
