@@ -1,9 +1,9 @@
-package com.luman.sofa.common.dal.handler;
+package com.luman.sofa.common.dal.encrypt.handler;
 
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
-import com.luman.sofa.common.dal.config.EncryptProperties;
+import com.luman.sofa.common.dal.encrypt.config.EncryptProperties;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.InitializingBean;
 

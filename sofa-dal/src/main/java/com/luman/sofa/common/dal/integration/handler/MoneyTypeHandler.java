@@ -3,7 +3,7 @@
  * 2022.1 - 2024.3
  */
 
-package com.luman.sofa.common.dal.handler;
+package com.luman.sofa.common.dal.integration.handler;
 
 import cn.hutool.core.math.MathUtil;
 import cn.hutool.core.math.Money;

@@ -1,4 +1,4 @@
-package com.luman.sofa.common.dal.interceptor;
+package com.luman.sofa.common.dal.encrypt.interceptor;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

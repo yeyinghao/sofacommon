@@ -1,10 +1,10 @@
-package com.luman.sofa.common.dal.convert;
+package com.luman.sofa.common.dal.integration.convert;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.luman.sofa.common.constant.CommConstant;
-import com.luman.sofa.common.dal.model.PO;
-import com.luman.sofa.common.dal.model.DP;
+import com.luman.sofa.common.dal.integration.model.PO;
+import com.luman.sofa.common.dal.integration.model.DP;
 import com.luman.sofa.dto.PageModel;
 import com.luman.sofa.dto.Paging;
 

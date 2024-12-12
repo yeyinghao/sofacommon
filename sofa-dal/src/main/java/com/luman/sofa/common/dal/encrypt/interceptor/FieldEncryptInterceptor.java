@@ -1,7 +1,7 @@
-package com.luman.sofa.common.dal.interceptor;
+package com.luman.sofa.common.dal.encrypt.interceptor;
 
-import com.luman.sofa.common.dal.annotation.FieldEncrypt;
-import com.luman.sofa.common.dal.handler.EncryptHandler;
+import com.luman.sofa.common.dal.encrypt.annotation.FieldEncrypt;
+import com.luman.sofa.common.dal.encrypt.handler.EncryptHandler;
 import jakarta.annotation.Resource;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;

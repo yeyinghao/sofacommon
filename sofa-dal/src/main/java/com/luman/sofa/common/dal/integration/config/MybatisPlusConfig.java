@@ -3,7 +3,7 @@
  * 2022.1 - 2023.12
  */
 
-package com.luman.sofa.common.dal.config;
+package com.luman.sofa.common.dal.integration.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;

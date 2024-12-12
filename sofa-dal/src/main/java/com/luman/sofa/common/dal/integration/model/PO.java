@@ -3,7 +3,7 @@
  * 2022.1 - 2023.9
  */
 
-package com.luman.sofa.common.dal.model;
+package com.luman.sofa.common.dal.integration.model;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

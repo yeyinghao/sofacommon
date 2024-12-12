@@ -1,4 +1,4 @@
-package com.luman.sofa.common.dal.model;
+package com.luman.sofa.common.dal.integration.model;
 
 import lombok.Data;
 import lombok.ToString;

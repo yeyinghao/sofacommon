@@ -1,4 +1,4 @@
-package com.luman.sofa.common.dal.annotation;
+package com.luman.sofa.common.dal.encrypt.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

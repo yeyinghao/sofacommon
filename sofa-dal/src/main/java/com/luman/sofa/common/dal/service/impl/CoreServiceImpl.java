@@ -4,9 +4,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luman.sofa.common.constant.LoggerConstant;
-import com.luman.sofa.common.dal.convert.DataConvert;
-import com.luman.sofa.common.dal.model.DP;
-import com.luman.sofa.common.dal.model.PO;
+import com.luman.sofa.common.dal.integration.convert.DataConvert;
+import com.luman.sofa.common.dal.integration.model.DP;
+import com.luman.sofa.common.dal.integration.model.PO;
 import com.luman.sofa.common.dal.service.CoreService;
 import com.luman.sofa.common.log.Logged;
 

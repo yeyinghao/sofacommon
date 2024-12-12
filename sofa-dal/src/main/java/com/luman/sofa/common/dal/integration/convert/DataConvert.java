@@ -1,8 +1,8 @@
-package com.luman.sofa.common.dal.convert;
+package com.luman.sofa.common.dal.integration.convert;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.luman.sofa.common.dal.model.DP;
-import com.luman.sofa.common.dal.model.PO;
+import com.luman.sofa.common.dal.integration.model.DP;
+import com.luman.sofa.common.dal.integration.model.PO;
 
 import java.util.List;
 import java.util.function.BiConsumer;

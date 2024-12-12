@@ -1,9 +1,9 @@
-package com.luman.sofa.common.dal.annotation;
+package com.luman.sofa.common.dal.encrypt.annotation;
 
-import com.luman.sofa.common.dal.config.EncryptProperties;
-import com.luman.sofa.common.dal.handler.EncryptHandler;
-import com.luman.sofa.common.dal.interceptor.FieldDecryptInterceptor;
-import com.luman.sofa.common.dal.interceptor.FieldEncryptInterceptor;
+import com.luman.sofa.common.dal.encrypt.config.EncryptProperties;
+import com.luman.sofa.common.dal.encrypt.handler.EncryptHandler;
+import com.luman.sofa.common.dal.encrypt.interceptor.FieldDecryptInterceptor;
+import com.luman.sofa.common.dal.encrypt.interceptor.FieldEncryptInterceptor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Import;
 

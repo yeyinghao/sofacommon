@@ -2,8 +2,8 @@ package com.luman.sofa.common.dal.service;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.luman.sofa.common.dal.model.PO;
-import com.luman.sofa.common.dal.model.DP;
+import com.luman.sofa.common.dal.integration.model.PO;
+import com.luman.sofa.common.dal.integration.model.DP;
 
 import java.util.List;
 import java.util.Optional;
