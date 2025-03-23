@@ -71,12 +71,22 @@ public interface CommConstant extends BaseConstant {
 	/**
 	 * 线程池Executor默认
 	 */
-	String THREAD_POOL_EXECUTOR_DEFAULT = "smy";
+	String THREAD_POOL_EXECUTOR_DEFAULT = "sofasmy";
+
+	/**
+	 * 线程池Executor默认
+	 */
+	String SCHEDULED_THREAD_NAME_PREFIX = "sofasmy-scheduling-";
+
+	/**
+	 * js的number最大安全值
+	 */
+	Long MAX_VALUE = 9007199254740991L;
 
 	/**
 	 * 跨域最大时间 3600 * 24
 	 */
-	long CORS_MAX_AGE_SECOND = 86400;
+	Long CORS_MAX_AGE_SECOND = 86400L;
 
 	/**
 	 * 默认页面索引

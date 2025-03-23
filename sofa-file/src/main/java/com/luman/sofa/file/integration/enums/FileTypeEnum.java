@@ -5,7 +5,7 @@
 
 package com.luman.sofa.file.integration.enums;
 
-import com.luman.sofa.dto.enums.ByStringCode;
+import com.luman.sofa.model.enums.ByStringCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -20,8 +20,6 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @ToString
 public enum FileTypeEnum implements ByStringCode {
-
-
 
 	/**
 	 * 业务文件

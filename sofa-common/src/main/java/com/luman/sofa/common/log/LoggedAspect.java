@@ -10,7 +10,7 @@ import com.luman.sofa.common.exception.VarChecker;
 import com.luman.sofa.common.helper.ResponseHelper;
 import com.luman.sofa.common.utils.LoggerUtil;
 import com.luman.sofa.common.utils.TimeUtil;
-import com.luman.sofa.dto.DTO;
+import com.luman.sofa.model.DTO;
 import lombok.SneakyThrows;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

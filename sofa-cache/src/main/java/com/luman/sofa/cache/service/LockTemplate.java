@@ -1,7 +1,7 @@
 package com.luman.sofa.cache.service;
 
 
-import com.luman.sofa.dto.enums.ByLockCode;
+import com.luman.sofa.model.enums.ByStringCode;
 
 import java.util.function.Supplier;
 
@@ -16,58 +16,58 @@ public interface LockTemplate {
 	/**
 	 * 锁
 	 *
-	 * @param byLockCode 基础枚举
+	 * @param byStringCode 基础枚举
 	 * @param bizId    业务id
 	 * @param runnable 可运行
 	 */
-	void lock(ByLockCode byLockCode, Object bizId, Runnable runnable);
+	void lock(ByStringCode byStringCode, Object bizId, Runnable runnable);
 
 	/**
 	 * 锁
 	 *
-	 * @param byLockCode 基础枚举
+	 * @param byStringCode 基础枚举
 	 * @param bizId    业务id
 	 * @param supplier 供应商
 	 * @return {@link R}
 	 */
-	<R> R lock(ByLockCode byLockCode, Object bizId, Supplier<R> supplier);
+	<R> R lock(ByStringCode byStringCode, Object bizId, Supplier<R> supplier);
 
 	/**
 	 * 试着锁
 	 *
-	 * @param byLockCode 基础枚举
+	 * @param byStringCode 基础枚举
 	 * @param bizId    业务id
 	 * @param runnable 可运行
 	 */
-	void tryLock(ByLockCode byLockCode, Object bizId, Runnable runnable);
+	void tryLock(ByStringCode byStringCode, Object bizId, Runnable runnable);
 
 	/**
 	 * 试着锁
 	 *
-	 * @param byLockCode 基础枚举
+	 * @param byStringCode 基础枚举
 	 * @param bizId    业务id
 	 * @param supplier 供应商
 	 * @return {@link R}
 	 */
-	<R> R tryLock(ByLockCode byLockCode, Object bizId, Supplier<R> supplier);
+	<R> R tryLock(ByStringCode byStringCode, Object bizId, Supplier<R> supplier);
 
 	/**
 	 * 试锁
 	 *
-	 * @param byLockCode 基础枚举
+	 * @param byStringCode 基础枚举
 	 * @param bizId    业务id
 	 * @param runnable 可运行
 	 */
-	void tryLockEx(ByLockCode byLockCode, Object bizId, Runnable runnable);
+	void tryLockEx(ByStringCode byStringCode, Object bizId, Runnable runnable);
 
 	/**
 	 * 试锁
 	 *
-	 * @param byLockCode 基础枚举
+	 * @param byStringCode 基础枚举
 	 * @param bizId    业务id
 	 * @param supplier 供应商
 	 * @return {@link R}
 	 */
-	<R> R tryLockEx(ByLockCode byLockCode, Object bizId, Supplier<R> supplier);
+	<R> R tryLockEx(ByStringCode byStringCode, Object bizId, Supplier<R> supplier);
 
 }

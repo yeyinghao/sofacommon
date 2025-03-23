@@ -1,8 +1,8 @@
 package com.luman.sofa.file.manager.impl;
 
-import com.luman.sofa.dto.FileVO;
 import com.luman.sofa.file.controller.cmd.FileUrlDownloadCmd;
 import com.luman.sofa.file.controller.cmd.FileUrlUploadCmd;
+import com.luman.sofa.file.controller.dto.FileVO;
 import com.luman.sofa.file.manager.FileManager;
 import com.luman.sofa.file.manager.cmd.FileUrlDownloadCmdExe;
 import com.luman.sofa.file.manager.cmd.FileUrlUploadCmdExe;

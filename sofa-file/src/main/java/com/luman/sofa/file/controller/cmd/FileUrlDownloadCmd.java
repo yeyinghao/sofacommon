@@ -1,6 +1,6 @@
 package com.luman.sofa.file.controller.cmd;
 
-import com.luman.sofa.dto.Command;
+import com.luman.sofa.model.Command;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

@@ -3,11 +3,11 @@ package com.luman.sofa.file.controller;
 import com.luman.sofa.common.constant.LoggerConstant;
 import com.luman.sofa.common.helper.ResponseHelper;
 import com.luman.sofa.common.log.Logged;
-import com.luman.sofa.dto.FileVO;
-import com.luman.sofa.dto.Response;
 import com.luman.sofa.file.controller.cmd.FileUrlDownloadCmd;
 import com.luman.sofa.file.controller.cmd.FileUrlUploadCmd;
+import com.luman.sofa.file.controller.dto.FileVO;
 import com.luman.sofa.file.manager.FileManager;
+import com.luman.sofa.model.SingleResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,13 +23,13 @@ public class FileController {
 	private final FileManager fileManager;
 
 	@PostMapping("/getFileUploadUrl")
-	public Response<FileVO> getFileUploadUrl(@RequestBody FileUrlUploadCmd cmd) {
-		return ResponseHelper.success(fileManager.getFileUploadUrl(cmd));
+	public SingleResponse<FileVO> getFileUploadUrl(@RequestBody FileUrlUploadCmd cmd) {
+		return ResponseHelper.singleSuccess(fileManager.getFileUploadUrl(cmd));
 	}
 
 	@PostMapping("/getFileDownloadUrl")
-	public Response<FileVO> getFileDownloadUrl(@RequestBody FileUrlDownloadCmd cmd) {
-		return ResponseHelper.success(fileManager.getFileDownloadUrl(cmd));
+	public SingleResponse<FileVO> getFileDownloadUrl(@RequestBody FileUrlDownloadCmd cmd) {
+		return ResponseHelper.singleSuccess(fileManager.getFileDownloadUrl(cmd));
 	}
 
 }

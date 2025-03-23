@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * dto
+ * model
  *
  * @author yeyinghao
  * @date 2024/08/19

@@ -18,7 +18,7 @@
 
         <dependency>
             <groupId>com.luman.sofacommon</groupId>
-            <artifactId>sofa-dto</artifactId>
+            <artifactId>sofa-model</artifactId>
         </dependency>
 
         <dependency>
@@ -39,16 +39,6 @@
         <dependency>
             <groupId>com.alipay.sofa</groupId>
             <artifactId>tracer-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>jakarta.activation</groupId>
-            <artifactId>jakarta.activation-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
         </dependency>
 
         <dependency>
