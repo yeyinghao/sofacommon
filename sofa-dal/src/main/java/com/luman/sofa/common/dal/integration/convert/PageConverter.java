@@ -16,7 +16,7 @@ public interface PageConverter {
 	 *
 	 * @param page 分页
 	 */
-	default <D> PageVO<D> page2PageModel(IPage<D> page) {
+	default <D> PageVO<D> convert2PageVO(IPage<D> page) {
 		PageVO<D> pageVO = new PageVO<>();
 		pageVO.setRecords(page.getRecords());
 		pageVO.setPageSize(page.getSize());
@@ -31,7 +31,7 @@ public interface PageConverter {
 	 * @param pageQuery 分页
 	 * @return {@link IPage }<{@link P }>
 	 */
-	default <P extends PO> IPage<P> paging2Page(PageQuery pageQuery) {
+	default <P extends PO> IPage<P> convert2IPage(PageQuery pageQuery) {
 		if (Objects.isNull(pageQuery) || Objects.isNull(pageQuery.getPageIndex()) || Objects.isNull(pageQuery.getPageSize())) {
 			return new Page<>(CommConstant.DEFAULT_PAGE_INDEX, CommConstant.DEFAULT_PAGE_SIZE);
 		}
