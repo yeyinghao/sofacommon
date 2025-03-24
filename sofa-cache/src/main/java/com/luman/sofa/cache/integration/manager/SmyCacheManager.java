@@ -16,6 +16,7 @@
 package com.luman.sofa.cache.integration.manager;
 
 import lombok.Data;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RMap;
 import org.redisson.api.RMapCache;
@@ -120,6 +121,7 @@ public class SmyCacheManager implements CacheManager {
 		return cache;
 	}
 
+	@NonNull
 	@Override
 	public Collection<String> getCacheNames() {
 		return Collections.unmodifiableSet(configMap.keySet());
