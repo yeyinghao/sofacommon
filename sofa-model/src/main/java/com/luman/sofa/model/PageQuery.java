@@ -21,8 +21,8 @@ public abstract class PageQuery extends Query {
 	@Serial
 	private static final long serialVersionUID = 1L;
 
-	private Integer pageSize;
+	private Long pageSize;
 
-	private Integer pageIndex;
+	private Long pageIndex;
 
 }

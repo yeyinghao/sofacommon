@@ -13,6 +13,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
 
+import static com.luman.sofa.common.constant.CommConstant.EXECUTOR_THREAD_NAME_PREFIX;
+
 /**
  * 执行器配置
  *
@@ -40,7 +42,7 @@ public class ExecutorConfig {
 		threadPoolExecutor.setThreadPriority(Thread.MAX_PRIORITY);
 		threadPoolExecutor.setDaemon(false);
 		threadPoolExecutor.setKeepAliveSeconds(300);// 线程空闲时间
-		threadPoolExecutor.setThreadNamePrefix("smy-executor-"); // 线程名字前缀
+		threadPoolExecutor.setThreadNamePrefix(EXECUTOR_THREAD_NAME_PREFIX); // 线程名字前缀
 		return threadPoolExecutor;
 	}
 

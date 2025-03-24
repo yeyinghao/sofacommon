@@ -7,7 +7,7 @@ import com.luman.sofa.file.controller.cmd.FileUrlDownloadCmd;
 import com.luman.sofa.file.controller.cmd.FileUrlUploadCmd;
 import com.luman.sofa.file.controller.dto.FileVO;
 import com.luman.sofa.file.manager.FileManager;
-import com.luman.sofa.model.SingleResponse;
+import com.luman.sofa.model.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,13 +23,13 @@ public class FileController {
 	private final FileManager fileManager;
 
 	@PostMapping("/getFileUploadUrl")
-	public SingleResponse<FileVO> getFileUploadUrl(@RequestBody FileUrlUploadCmd cmd) {
-		return ResponseHelper.singleSuccess(fileManager.getFileUploadUrl(cmd));
+	public Response<FileVO> getFileUploadUrl(@RequestBody FileUrlUploadCmd cmd) {
+		return ResponseHelper.success(fileManager.getFileUploadUrl(cmd));
 	}
 
 	@PostMapping("/getFileDownloadUrl")
-	public SingleResponse<FileVO> getFileDownloadUrl(@RequestBody FileUrlDownloadCmd cmd) {
-		return ResponseHelper.singleSuccess(fileManager.getFileDownloadUrl(cmd));
+	public Response<FileVO> getFileDownloadUrl(@RequestBody FileUrlDownloadCmd cmd) {
+		return ResponseHelper.success(fileManager.getFileDownloadUrl(cmd));
 	}
 
 }

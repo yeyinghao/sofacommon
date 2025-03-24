@@ -13,7 +13,7 @@ import java.io.Serial;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class Response extends DTO {
+public class Response<T> extends VO {
 
 	/**
 	 * 串口版本uid
@@ -50,5 +50,7 @@ public class Response extends DTO {
 	 * 请求时间戳
 	 */
 	private Long timestamp;
+
+	private T data;
 
 }
