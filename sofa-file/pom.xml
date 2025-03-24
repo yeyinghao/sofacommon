@@ -13,6 +13,7 @@
     <artifactId>sofa-file</artifactId>
     <packaging>jar</packaging>
     <name>sofa-file</name>
+    <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
 

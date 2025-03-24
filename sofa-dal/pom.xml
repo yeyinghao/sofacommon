@@ -13,13 +13,9 @@
     <artifactId>sofa-dal</artifactId>
     <packaging>jar</packaging>
     <name>sofa-dal</name>
+    <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.luman.sofacommon</groupId>
-            <artifactId>sofa-common</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.luman.sofacommon</groupId>
