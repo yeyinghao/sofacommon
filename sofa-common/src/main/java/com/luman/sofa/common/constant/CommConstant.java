@@ -78,6 +78,9 @@ public interface CommConstant extends BaseConstant {
 	 */
 	String SCHEDULED_THREAD_NAME_PREFIX = "sofasmy-scheduling-";
 
+	/**
+	 * 线程池Executor名称prefix
+	 */
 	String EXECUTOR_THREAD_NAME_PREFIX = "sofasmy-executor-";
 
 	/**
